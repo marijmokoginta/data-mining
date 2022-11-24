@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\DashboardFeature;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,24 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        DashboardFeature::create([
+            'name' => 'Feature 1'
+        ]);
+        DashboardFeature::create([
+            'name' => 'Feature 2'
+        ]);
+        DashboardFeature::create([
+            'name' => 'Feature 3'
+        ]);
+        DashboardFeature::create([
+            'name' => 'Feature 4'
+        ]);
+        DashboardFeature::create([
+            'name' => 'Feature 5'
+        ]);
+        DashboardFeature::create([
+            'name' => 'Feature 6'
+        ]);
     }
 }
