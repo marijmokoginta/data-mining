@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('teacher.layouts.app')
 
 @section('content')
 @if (Auth::user()->hasAnyRole('super-admin', 'guru'))

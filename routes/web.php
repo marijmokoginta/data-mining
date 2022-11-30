@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,3 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/prediksi-penjurusan', [SiswaController::class, 'prediksi'])->name('prediksi-penjurusan');
+Route::get('/jurusan', [SiswaController::class, 'jurusan'])->name('jurusan');
+Route::post('/tampil-hasil', [SiswaController::class, 'hasil'])->name('hasil');
