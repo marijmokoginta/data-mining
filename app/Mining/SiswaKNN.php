@@ -13,7 +13,7 @@ class SiswaKNN {
         $this->dataset = $dataset;
     }
 
-    public function predict(SiswaDTO $siswaTest, $k) {
+    public function predict(SiswaDTO $siswaTest, $k) : array {
         $dataDistance = [];
 
         // distance
@@ -116,6 +116,8 @@ class SiswaKNN {
         }
 
         $siswaTest->setJurusanPredict($kSiswa[0]->jurusan);
+
+        return $kSiswa;
 
     }
 }

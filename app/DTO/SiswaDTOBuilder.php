@@ -2,6 +2,8 @@
 
 namespace App\DTO;
 
+use Ramsey\Collection\Exception\ValueExtractionException;
+
 class SiswaDTOBuilder {
     
     private string $nama;
@@ -90,9 +92,13 @@ class SiswaDTOBuilder {
         return $this;
     }
 
-    public function setJurusan(Jurusan $jurusan) : SiswaDTOBuilder
+    public function setJurusan(string $jurusan) : SiswaDTOBuilder
     {
-        $this->jurusan = $jurusan;
+        try {
+            $this->jurusan = Jurusan::fromName($jurusan);
+        } catch (ValueExtractionException $e) {
+            throw new ValueExtractionException($e->getMessage());
+        }
         return $this;
     }
 
