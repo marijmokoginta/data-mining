@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Siswa;
+namespace App\DTO;
 
 enum Jurusan {
 
