@@ -73,20 +73,24 @@
 </section>
 
 
-@if(session()->has('hasil'))
+@if(session()->has('HASIL'))
 <section id="hasil" class="skills section-bg">
     <div class="container" data-aos="fade-up">
         <div class="d-flex flex-column pt-5">
             <div class="mx-auto text-center mb-3">
                 <h2 class="page-title">Hasil</h2>
             </div>
-            <div class="content">
+            <div class="text-center mx-auto mb-3">
+                <h1>{{ session('HASIL')->getSiswa()->getJurusanPredict()->value }}</h1>
+            </div>
+            <button class="btn bt-light rounded-pill px-4 mx-auto lihat-detail border-green" type="button">Lihat detail</button>
+            <div class="content collapse detail-hasil" id="detail">
                 <div class="skills-content">
-                @foreach(session('hasil') as $key => $hasil)
+                @foreach(session('HASIL')->getClassificationResult() as $result)
                     <div class="progress">
-                        <span class="skill @if($hasil >= 90) color-green @elseif($hasil >= 70) color-blue @elseif($hasil < 70) color-red @endif">{{ $key }} <i class="val">{{ $hasil . '%' }}</i></span>
+                        <span class="skill color-green">{{ $result->jurusan->value }} <i class="val">{{ $result->avg . '%' }}</i></span>
                         <div class="progress-bar-wrap">
-                            <div class="progress-bar @if($hasil >= 90) color-bg-green @elseif($hasil >= 70) color-bg-blue @elseif($hasil < 70) color-bg-red @endif" role="progressbar" aria-valuenow="{{ $hasil }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar color-bg-green" role="progressbar" aria-valuenow="{{ $result->avg }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 @endforeach
@@ -95,6 +99,16 @@
         </div>
     </div>
 </section>
+
 @endif
 
+@endsection
+@section('script')
+<script>
+
+    $(document).on('click', '.lihat-detail', function() {
+        $('.detail-hasil').removeClass('collapse')
+    })
+
+</script>
 @endsection

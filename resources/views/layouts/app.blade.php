@@ -5,12 +5,11 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="favicon.ico" rel="icon">
 
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -26,6 +25,8 @@
 
     <link href="assets/css/welcome.css" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -33,7 +34,7 @@
     <header id="header" class="fixed-top @yield('bg-header')">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="{{ route('welcome') }}">{{ env('APP_NAME') }}</a></h1>
+            <h1 class="logo me-auto"><a href="{{ route('welcome') }}">{{ config('app.name', 'Laravel') }}</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -74,7 +75,11 @@
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
     <script src="assets/js/welcome.js"></script>
+
+    @yield('script')
 
 </body>
 

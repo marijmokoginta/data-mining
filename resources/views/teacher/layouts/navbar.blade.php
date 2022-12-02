@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md">
         <div class="container">
             <a class="navbar-brand color-green d-flex align-items-center" href="@guest{{ route('welcome') }}@else{{ route('home') }}@endguest">
-                <img src="favicon.ico" alt="smkn1gorontalo" class="me-2">
+                <img src="{{ asset('favicon.ico') }}" alt="smkn1gorontalo" class="me-2">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -11,38 +11,9 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- center Side Of Navbar -->
-                @auth
-                <ul class="navbar-nav mx-auto">
-                    @if (Auth::user()->hasAnyRole(['super-admin', 'guru']))
-                    <li class="nav-item">
-                        <a href="#" class="nav-link color-green">
-                            {{ __('navbar.dashboard') }}
-                        </a>
-                    </li>
-                    @if (Auth::user()->hasRole('super-admin'))
-                    <li class="nav-item">
-                        <a href="#" class="nav-link color-green">
-                            {{ __('navbar.teacher') }}
-                        </a>
-                    </li>
-                    @endif
-                    <li class="nav-item">
-                        <a href="#" class="nav-link color-green">
-                            {{ __('navbar.student') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link color-green">
-                            {{ __('navbar.profile') }}
-                        </a>
-                    </li>
-                    @endif
-                </ul>
-                @endauth
 
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav @guest ms-auto @endguest">
+                <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))

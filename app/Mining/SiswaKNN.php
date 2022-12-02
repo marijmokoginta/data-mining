@@ -94,16 +94,16 @@ class SiswaKNN {
         }
 
         $kSiswa = [];
-        $kSiswa[] = (new KSiswa(Jurusan::PSPR, $PSPR));
-        $kSiswa[] = (new KSiswa(Jurusan::PSPT, $PSPT));
-        $kSiswa[] = (new KSiswa(Jurusan::TKJ, $TKJ));
-        $kSiswa[] = (new KSiswa(Jurusan::RPL, $RPL));
-        $kSiswa[] = (new KSiswa(Jurusan::MM, $MM));
-        $kSiswa[] = (new KSiswa(Jurusan::UPW, $UPW));
-        $kSiswa[] = (new KSiswa(Jurusan::AKL, $AKL));
-        $kSiswa[] = (new KSiswa(Jurusan::OTKP, $OTKP));
-        $kSiswa[] = (new KSiswa(Jurusan::BDP, $BDP));
-        $kSiswa[] = (new KSiswa(Jurusan::APL, $APL));
+        $kSiswa[] = (new KSiswa(Jurusan::PSPR, $PSPR, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::PSPT, $PSPT, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::TKJ, $TKJ, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::RPL, $RPL, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::MM, $MM, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::UPW, $UPW, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::AKL, $AKL, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::OTKP, $OTKP, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::BDP, $BDP, $k));
+        $kSiswa[] = (new KSiswa(Jurusan::APL, $APL, $k));
 
         for ($i = 0; $i < count($kSiswa)-1; $i++) {
             for ($j = $i+1; $j < count($kSiswa); $j++) {

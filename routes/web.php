@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DatasetController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -26,3 +27,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/prediksi-penjurusan', [SiswaController::class, 'prediksi'])->name('prediksi-penjurusan');
 Route::get('/jurusan', [SiswaController::class, 'jurusan'])->name('jurusan');
 Route::post('/tampil-hasil', [SiswaController::class, 'hasil'])->name('hasil');
+
+Route::prefix('/home')->group(function() {
+    Route::get('/kosongkan-dataset', [DatasetController::class, 'truncateDataset'])->name('kosongkan_dataset');
+    Route::get('/template-csv', [DatasetController::class, 'templateCsv'])->name('template_csv');
+    Route::get('/dataset', [DatasetController::class, 'index'])->name('dataset');
+    Route::post('/dataset', [DatasetController::class, 'addData'])->name('tambah_data');
+    Route::post('/dataset/import-csv', [DatasetController::class, 'importFromCsv'])->name('import_csv');
+    Route::delete('/dataset/{siswa:id}', [DatasetController::class, 'deleteOne'])->name('delete_one');
+});

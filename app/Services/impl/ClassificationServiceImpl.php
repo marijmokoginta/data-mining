@@ -59,8 +59,8 @@ class ClassificationServiceImpl implements ClassificationService
                     ->setPenjas($siswa->penjas)
                     ->setPrakarya($siswa->prakarya)
                     ->setBhs_daerah($siswa->bhs_daerah)
-                    ->setJurusan($siswa->jurusan)
                     ->build();
+                $siswaDto->setJurusan($siswa->jurusan);
             } catch (ValueExtractionException $e) {
                 // throw custom exception
             }

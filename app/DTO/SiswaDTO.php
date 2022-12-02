@@ -2,6 +2,8 @@
 
 namespace App\DTO;
 
+use Ramsey\Collection\Exception\ValueExtractionException;
+
 class SiswaDTO {
     
     private string $nama;
@@ -37,8 +39,7 @@ class SiswaDTO {
         float $seni_budaya,
         float $penjas,
         float $prakarya,
-        float $bhs_daerah,
-        Jurusan $jurusan
+        float $bhs_daerah
     )
     {
         $this->nama = $nama;
@@ -53,7 +54,6 @@ class SiswaDTO {
         $this->penjas = $penjas;
         $this->prakarya = $prakarya;
         $this->bhs_daerah = $bhs_daerah;
-        $this->jurusan = $jurusan;
     }
 
     public function getNama() {
@@ -156,8 +156,13 @@ class SiswaDTO {
         return $this->jurusan;
     }
 
-    public function setJurusan(Jurusan $jurusan) {
-        $this->jurusan = $jurusan;
+    public function setJurusan(string $jurusan) {
+        try {
+            $this->jurusan = Jurusan::fromName($jurusan);
+        } catch (ValueExtractionException $e) {
+            throw new ValueExtractionException($e->getMessage());
+        }
+        return $this;
     }
 
     public function getBhs_daerah() {

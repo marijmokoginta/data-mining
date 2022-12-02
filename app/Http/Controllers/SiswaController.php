@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\SiswaDTO;
+use App\Services\ClassificationService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 
 class SiswaController extends Controller
 {
+    private ClassificationService $classificationService;
+
+    public function __construct(ClassificationService $classificationService) {
+        $this->classificationService = $classificationService;
+    }
     
     public function jurusan() {
         return view('student.jurusan');
@@ -34,20 +41,11 @@ class SiswaController extends Controller
             'bdaerah' => 'required'
         ]);
 
-        $jurusan = [
-            'pspr' => 0,
-            'pspt' => 0,
-            'tkj' => 90,
-            'rpl' => 70,
-            'mm' => 40,
-            'upw' => 20,
-            'akl' => 0,
-            'otkp' => 0,
-            'bdp' => 0,
-            'apl' => 0
-        ];
+        $siswa = SiswaDTO::builder()->setNama('Siswa')->setAgama($nilai['agama'])->setPkn($nilai['pkn'])->setBhs_indo($nilai['bindo'])->setMatematika($nilai['mtk'])->setIpa($nilai['ipa'])->setIps($nilai['ips'])->setBhs_inggris($nilai['binggris'])->setSeni_budaya($nilai['senbud'])->setPenjas($nilai['penjas'])->setPrakarya($nilai['prakarya'])->setBhs_daerah($nilai['bdaerah'])->build();
 
-        return Redirect::to(URL::previous() . '#hasil')->with('hasil', $jurusan);
+        $response = $this->classificationService->classification($siswa);
+
+        return Redirect::to(URL::previous() . '#hasil')->with('HASIL', $response);
     }
 
 }

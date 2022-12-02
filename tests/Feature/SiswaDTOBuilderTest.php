@@ -33,7 +33,6 @@ class SiswaDTOBuilderTest extends TestCase
             ->setPenjas(90)
             ->setPrakarya(90)
             ->setBhs_daerah(90)
-            ->setJurusan('TKJ')
             ->build();
 
         assertNotNull($siswa);

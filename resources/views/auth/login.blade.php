@@ -40,7 +40,7 @@
 
                         <div class="d-flex mb-0">
                             <div class="mx-auto">
-                                <button type="submit" class="btn color-bg-green rounded-pill d-block px-5">
+                                <button type="submit" class="btn btn-login color-bg-green rounded-pill d-block px-5">
                                     {{ __('Login') }}
                                 </button>
                             </div>
