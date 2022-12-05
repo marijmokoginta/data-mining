@@ -15,6 +15,8 @@
 <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
 
+@yield('script')
+
 <script>
     const select = (el, all = false) => {
         el = el.trim()
@@ -30,8 +32,5 @@
         new simpleDatatables.DataTable(datatable);
     })
 </script>
-
-@yield('script')
-
 
 @include('teacher.layouts.footer')

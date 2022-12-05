@@ -43,7 +43,6 @@ Route::prefix('/home')->group(function() {
     Route::post('/datatest/testing', [TestingDataController::class, 'testing'])->name('testing_data');
 
     Route::get('/detail-testing', [TestingDataController::class, 'detailTesting'])->name('detail_testing');
-    Route::post('/detail-testing/export', [TestingDataController::class, 'exportTestingResult'])->name('export_hasil');
 
     Route::post('/nilaik/{k}', [NilaiKController::class, 'update'])->name('nilaik');
 });

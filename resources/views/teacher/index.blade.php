@@ -202,15 +202,8 @@
                 console.log(err)
             }, success : function (res) {
                 $('#datailTesting').html(res)
-                const datatables = select('.datatable', true)
-                datatables.forEach(datatable => {
-                    new simpleDatatables.DataTable(datatable);
-                })
             }
         })
-    })
-    $(document).on('click', '#btnCloseResult', function() {
-        $('#datailTesting').html('')
     })
     @endif
 
