@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DatasetController;
+use App\Http\Controllers\Admin\NilaiKController;
+use App\Http\Controllers\Admin\TestingDataController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -35,4 +37,12 @@ Route::prefix('/home')->group(function() {
     Route::post('/dataset', [DatasetController::class, 'addData'])->name('tambah_data');
     Route::post('/dataset/import-csv', [DatasetController::class, 'importFromCsv'])->name('import_csv');
     Route::delete('/dataset/{siswa:id}', [DatasetController::class, 'deleteOne'])->name('delete_one');
+
+    Route::post('/datatest', [TestingDataController::class, 'uploadCsvFile'])->name('upload_testing');
+    Route::post('/datatest/delete', [TestingDataController::class, 'deleteTesting'])->name('hapus_datatest');
+    Route::post('/datatest/testing', [TestingDataController::class, 'testing'])->name('testing_data');
+
+    Route::get('/detail-testing', [TestingDataController::class, 'detailTesting'])->name('detail_testing');
+
+    Route::post('/nilaik/{k}', [NilaiKController::class, 'update'])->name('nilaik');
 });

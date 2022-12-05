@@ -2,11 +2,13 @@
 
 :root {
     --color-green : #00A9A4;
+    --color-green-light : #bae6e3;
     --color-green-dark : #05847f;
     --color-blue : #00A4DA;
     --color-light : #ECEFF7;
     --color-white : #FDFCFF;
     --color-danger : #DC3545;
+    --color-warning : #FFCA2C;
     
 }
 
@@ -46,6 +48,10 @@
     background-color: var(--color-white);
 }
 
+.color-bg-green-light {
+  background-color: var(--color-green-light);
+}
+
 .btn-login {
   color: var(--color-light);
 }
@@ -66,8 +72,38 @@
   background-color: var(--color-green-dark);
 }
 
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-success {
+  color: var(--color-success);
+}
+
+.color-warning {
+  color: var(--color-warning);
+}
+
 .color-danger {
   color: var(--color-danger);
+  transition: 0.5s;
+}
+
+.color-danger.danger {
+  transform: scale3d(1.5);
+}
+
+.btn-success-light {
+  background-color: var(--color-green-light);
+  color: var(--color-green-dark);
+}
+
+.btn-success-light:hover {
+  background-color: var(--color-green);
+}
+
+#simpanK {
+  transition: ease 1s;
 }
 
 /*--------------------------------------------------------------

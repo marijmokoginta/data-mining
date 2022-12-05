@@ -319,19 +319,6 @@
 @section('script')
 
 <script>
-    const select = (el, all = false) => {
-        el = el.trim()
-        if (all) {
-        return [...document.querySelectorAll(el)]
-        } else {
-        return document.querySelector(el)
-        }
-    }
-
-    const datatables = select('.datatable', true)
-    datatables.forEach(datatable => {
-        new simpleDatatables.DataTable(datatable);
-    })
 
     $(document).on('click', '#btnHapus', function() {
         $('#namaSiswa').text($(this).data('siswa-nama'))

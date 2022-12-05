@@ -10,6 +10,6 @@ interface ClassificationService {
 
     function classification(SiswaDTO $siswaDTO) : ClassificationResponse;
 
-    function testClassification(array $dataset, $k) : CTestResponse;
+    function testClassification(array $datatest, $k) : CTestResponse;
 
 }
