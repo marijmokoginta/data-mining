@@ -14,7 +14,7 @@
                 <h5 class="card-title">Dataset</h5>
                 <div class="d-flex">
                     <div class="col-md-7">
-                        <div id="dataset" style="min-height: 29vh" class="echart"></div>
+                        <div id="dataset" style="min-height: 35vh" class="echart"></div>
                     </div>
                     <div class="col-md-5 d-flex flex-column align-items-center justify-content-around">
                         <h5 class="text-center">Total data : <span id="counter"></span></h5>
@@ -73,12 +73,12 @@
                                 <button class="btn btn-sm btn-success-light rounded-3" id="simpanNilaiK" style="width: 100%">Simpan Nlai K</button>
                             </div>
                         </div>
-                        <button id="btnTesting" class="btn btn-success mb-2 @if(!$datatest) disabled @endif" style="width: 90%">Lakukan pengujian</button>
+                        <button id="btnTesting" class="btn btn-sm btn-success mb-2 @if(!$datatest) disabled @endif" style="width: 90%">Lakukan pengujian</button>
                         <div id="hasil" class="row">
-                            <h6 class="col-4">Jumlah</h6><h6 class="col-8" id="jumlahTesting">: 0</h6>
-                            <h6 class="col-4">Benar</h6><h6 class="col-8" id="correctTesting">: 0</h6>
-                            <h6 class="col-4">Salah</h6><h6 class="col-8" id="incorrectTesting">: 0</h6>
-                            <h6 class="col-4">Akurasi</h6><h6 class="col-8" id="accuracyTesting">: 0%</h6>
+                            <h6 class="col-5">Jumlah</h6><h6 class="col-7" id="jumlahTesting">: 0</h6>
+                            <h6 class="col-5">Benar</h6><h6 class="col-7" id="correctTesting">: 0</h6>
+                            <h6 class="col-5">Salah</h6><h6 class="col-7" id="incorrectTesting">: 0</h6>
+                            <h6 class="col-5">Akurasi</h6><h6 class="col-7" id="accuracyTesting">: 0%</h6>
                             <a href="#" class="mt-2 color-primary" id="btnDetailTesting">Lihat detail ></a>
                         </div>
                     </div>
