@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row d-flex">
     <div class="col-12">
         <div class="card rounded-4" style="min-height: 40vh">
             <div class="card-body">
@@ -8,8 +8,8 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card rounded-4" style="min-height: 40vh">
+    <div class="col-md-6 d-flex align-items-stretch">
+        <div class="card rounded-4" style="min-height: 40vh; width: 100%">
             <div class="card-body">
                 <h5 class="card-title">Dataset</h5>
                 <div class="d-flex">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 d-flex align-items-stretch">
         <div class="card rounded-4" style="min-height: 40vh">
             <div class="card-body">
                 <h5 class="card-title">Testing</h5>
